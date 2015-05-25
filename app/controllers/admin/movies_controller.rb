@@ -1,7 +1,7 @@
 class Admin::MoviesController < AdminController
 
 	def index
-		@movies = Movie.order('release_date')
+		@movies = Movie.order(release_date: :desc)
 	end
 
 	def create

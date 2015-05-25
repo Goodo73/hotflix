@@ -7,7 +7,7 @@
 <div id="review-list">
 	<% @movies.each do |movie| %>
 		<div class="review-index">
-			<p><%= movie.title %></p>
+			<p><%= movie.title %> [release date <%= movie.release_date %>]</p>
 			<%= link_to "View", admin_movie_path(movie), :class => 'button', :method => :get  %>
 			<%= link_to "Edit", edit_admin_movie_path(movie), :class => 'button', :method => :get  %>
 			<%= link_to "Delete", admin_movie_path(movie), :class => 'button', :method => :delete  %>

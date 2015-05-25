@@ -28,6 +28,9 @@ The minimum viable product should provide the following:
 Desirable extensions include:
 - An API (likely **www.omdbapi.com**) in the admin portal to search for movies, and automatically copy-over the relevant fields
 - Login for the admin portal
+- A blog-style news page
+  - Include admin functionality similar to that used for reviews
+- Page visitors can leave their own rating of a movie (out fo 10), with the average rating then displayed
 
 ### Technology
 - Build with Ruby on Rails for the back end
