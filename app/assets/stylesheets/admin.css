@@ -1,0 +1,26 @@
+body {
+	background-color: linen;
+}
+
+.button {
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: white;
+	width: 50px;
+	display: inline-block;
+	text-align: center;
+	padding: 3px;
+}
+
+.new-review-btn {
+	width: 90px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.review-index {
+	margin-bottom: 30px;
+}

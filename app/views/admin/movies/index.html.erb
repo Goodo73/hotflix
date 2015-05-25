@@ -1,0 +1,16 @@
+<h1>Index page</h1>
+
+<%= link_to "New review", new_admin_movie_path, :class => 'button new-review-btn', :method => :get  %>
+
+<h2>Reviews</h2>
+
+<div id="review-list">
+	<% @movies.each do |movie| %>
+		<div class="review-index">
+			<p><%= movie.title %></p>
+			<%= link_to "View", admin_movie_path(movie), :class => 'button', :method => :get  %>
+			<%= link_to "Edit", edit_admin_movie_path(movie), :class => 'button', :method => :get  %>
+			<%= link_to "Delete", admin_movie_path(movie), :class => 'button', :method => :delete  %>
+		</div>
+	<% end %>
+</div>
