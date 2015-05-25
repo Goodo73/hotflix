@@ -3,7 +3,7 @@
 ## Website for Hot Flix Movie Reviews
 
 ### Background
-My brother, Pete Goodwin, reviews films. He currently presents his reviews on radio, usually as **Pete, The Movie Guy**, and on [Facebook](https://www.facebook.com/HotFlix.com.au) under the heading **Hot Flix Movie Reviews**. He does not yet have a functioning website.
+My brother, Pete Goodwin, reviews films. He currently presents his reviews on radio, usually as **Pete, The Movie Guy**, and on [Facebook](https://www.facebook.com/HotFlix.com.au) under the heading **Hot Flix Movie Reviews**. He does not yet have a website for showcasing his reviews.
 
 ### Objective
 The project objective is to build a website that will display his reviews, and allow him, through an *admin* portal, to add new reviews. The admin portal will also give him the ability to modify and delete existing reviews.

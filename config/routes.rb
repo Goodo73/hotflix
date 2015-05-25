@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :movies
   end
 
+  get '/' => 'movies#index', :as => :root
   get '/admin' => 'admin#index', :as => :admin_root
 
   # The priority is based upon order of creation: first created -> highest priority.
