@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  # required
   resources :movies
 
   namespace :admin do
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
 
   get '/' => 'movies#index', :as => :root
   get '/admin' => 'admin#index', :as => :admin_root
+  get '/api/reviews' => 'movies#list'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
