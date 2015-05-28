@@ -57,7 +57,8 @@
         &:hover {
           background-color: darken($background-from-list, 10%);
           background-repeat: no-repeat;
-          background-position: top;
+          background-position: center;
+          /*background-position: top;*/
           background-size: cover;
         }
       }
@@ -80,7 +81,8 @@
   .grid-item p {
       line-height: 1.5em;
       margin: auto;
-      color: transparentize($grid-item-color, 0.3);
+      /*color: transparentize($grid-item-color, 0.3);*/
+      color: transparentize($grid-item-color, 0.2);
       
       @include media($medium-screen) {
         max-width: 70%;
@@ -99,9 +101,11 @@
   }
 
   .grid-item-image {
-    background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png");
+    /*background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png");*/
+    background: url("http://ia.media-imdb.com/images/M/MV5BNDQ3OTAzMDI3MV5BMl5BanBnXkFtZTgwNTUzMTQ3NDE@._V1_SX300.jpg");
     background-color: $grid-item-background;
-    background-position: top;
+    /*background-position: top;*/
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }

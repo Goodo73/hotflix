@@ -32,7 +32,7 @@ var loadReviews = {
 			// ie. table-id: array-index
 
 			var $movieCard = $('<div>');
-			$movieCard.addClass('grid-item');
+			$movieCard.addClass('grid-item grid-item-image');
 
 			// Main text for the card; a trigger for a lightbox to show the movie's review
 			var $movieCardDetails = $('<div>').addClass('movie-card-dtl')
