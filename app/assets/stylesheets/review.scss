@@ -1,3 +1,55 @@
+body {
+	background-color: black;
+	color: white;
+}
+
+#review-page, .mylightbox {
+	font-family: $verdana;
+}
+
+#review-page {
+	@include outer-container(95%);
+}
+
+.main-heading {
+	font-size: 3em;
+	min-width: 225px;
+}
+
+.movie-card-dtl, .trailer {
+	cursor: pointer;
+	border: solid white 1px;
+	border-radius: 5px;
+}
+
+.movie-card-dtl {
+	margin-bottom: 45px;
+}
+
+.trailer {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
 .mylightbox {
+	@include outer-container(95%);
 	display: none;
+	color: black;
+}
+
+.movie-upper {
+	@include clearfix;	
+}
+
+.movie-details, .poster-container {
+	width: 50%;
+	float: left;
+}
+
+.poster-container {
+	text-align: center;
+}
+
+.poster {
+	max-height: 350px;
 }

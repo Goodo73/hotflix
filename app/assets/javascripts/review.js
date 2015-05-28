@@ -19,7 +19,6 @@ var loadReviews = {
 
 			loadReviews.render();
 		});
-
 	},
 
 	// Display individual reviews on the page
@@ -27,21 +26,32 @@ var loadReviews = {
 		var $reviewContainer = $('.grid-items');
 		var rev = loadReviews.reviews;
 
+		// For each movie in the database, create a corresponding 'card' on the screen
 		for (var i = 0; i < rev.length; i++) {
-			// var $review = $('<div>').addClass('grid-item');
-			var $reviewLink = $('<a>');
-
-			$reviewLink.attr('href','#');
-			$reviewLink.attr('data-featherlight','.mylightbox');
-			$reviewLink.attr('data-movie-id',rev[i].id);
-			$reviewLink.addClass('grid-item');
-			$reviewLink
-				.append($('<h1>').html(rev[i].title))
-				.append($('<p>').html('Released ' + prettyDate(rev[i].release_date)));
-
-			$reviewContainer.append($reviewLink);
-
 			loadReviews.idLookup[rev[i].id] = i;
+			// ie. table-id: array-index
+
+			var $movieCard = $('<div>');
+			$movieCard.addClass('grid-item');
+
+			// Main text for the card; a trigger for a lightbox to show the movie's review
+			var $movieCardDetails = $('<div>').addClass('movie-card-dtl')
+				.attr('data-featherlight','.mylightbox')
+				.attr('data-movie-id',rev[i].id);
+			$movieCardDetails
+				.append($('<h1>').html(rev[i].title));
+				// .append($('<p>').html('Released ' + prettyDate(rev[i].release_date)));
+
+			$movieCard.append($movieCardDetails);
+
+			// Supplementary text for the card; a trigger for a lightbox to show the movie's trailer
+			var $movieCardTrailer = $('<p>').addClass('trailer')
+				.attr('data-movie-id',rev[i].id)
+				.html('Play trailer');
+
+			$movieCard.append($movieCardTrailer);
+
+			$reviewContainer.append($movieCard);
 		};
 	}
 }
@@ -51,30 +61,60 @@ $(document).ready(function() {
 
 	loadReviews.getReviewData();
 
-	$('.grid-items').on('click','.grid-item',function() {
+	// When card's main text is clicked, display a lightbox containing the movie's review
+	$('.grid-items').on('click','.movie-card-dtl',function() {
 		var $modal = $('.mylightbox');
 		$modal.empty();
+		
+		var $upper = $('<div>').addClass('movie-upper');
 
 		var $idx = $(this).data('movieId');
 		var review = loadReviews.reviews[loadReviews.idLookup[$idx]];
 
-		$modal.append(reviewPara('Title: ',review.title));
-		$modal.append(reviewPara('Release date: ',prettyDate(review.release_date)));
-		$modal.append(reviewPara('Rating: ',review.rating));
-		$modal.append(reviewPara('Director: ',review.director));
-		$modal.append(reviewPara('Stars: ',review.cast));
-		$modal.append(reviewPara('Run time (minutes): ',review.duration));
-		$modal.append(reviewPara('My score (out of 10): ',review.score));
-		$modal.append(reviewPara('Target demo score (out of 10): ',review.demographic_score));
+		var $details = $('<div>').addClass('movie-details');
+		$details.append(reviewPara('Title: ',review.title));
+		$details.append(reviewPara('Release date: ',prettyDate(review.release_date)));
+		$details.append(reviewPara('Rating: ',review.rating));
+		$details.append(reviewPara('Director: ',review.director));
+		$details.append(reviewPara('Stars: ',review.cast));
+		$details.append(reviewPara('Run time (minutes): ',review.duration));
+		$details.append(reviewPara('My score (out of 10): ',review.score));
+		$details.append(reviewPara('Target demo score (out of 10): ',review.demographic_score));
 
-		var $para = reviewPara('IMDb: ','');
+		var $imdb = reviewPara('IMDb: ','');
 		var imdbUrl = ('http://www.imdb.com/title/' + review.imdbid + '/');
+		$imdb.append(createLink(imdbUrl));
+		$details.append($imdb);
 
-		$para.append(createLink(imdbUrl));
-		$modal.append($para);
+		var $posterContainer = $('<div>').addClass('poster-container');
+		var $poster = $('<img>').addClass('poster');
+		// $img.attr('src',review.poster);
+		$poster.attr('src','http://ia.media-imdb.com/images/M/MV5BNDQ3OTAzMDI3MV5BMl5BanBnXkFtZTgwNTUzMTQ3NDE@._V1_SX300.jpg');
+		$poster.attr('alt','Poster of ' + review.title);
 
-		$modal.append($('<p>').html(review.review));
-	})
+		$posterContainer.append($poster);
+
+		$upper.append($details);
+		$upper.append($posterContainer);
+		$modal.append($upper);
+		
+		var $review = $('<p>').html(review.review);
+		$modal.append($review);
+	});
+
+	// When card's supplementary text is clicked, display a lightbox containing the movie's trailer
+	$('.grid-items').on('click','p.trailer',function() {
+		var $idx = $(this).data('movieId');
+		var review = loadReviews.reviews[loadReviews.idLookup[$idx]];
+
+		var trailerSrc = 'https://www.youtube.com/watch?v=' + review.trailer_link;
+		$.magnificPopup.open({
+		    items: {
+		      src: trailerSrc
+		    },
+		    type: 'iframe'
+		});
+	});
 });
 
 // Returns a formatted date: DD/MM/YYYY' (leading-zero suppressed)
@@ -85,7 +125,7 @@ function prettyDate(date) {
 	return d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear();
 }
 
-function reviewPara(heading, text) {
+function reviewPara(heading,text) {
 	return $('<p>').html('<strong>' + heading + '</strong>' + text);
 }
 

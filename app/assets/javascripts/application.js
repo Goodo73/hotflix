@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require review
 //= require featherlight/featherlight.min
+//= require magnific/magnific-popup.min

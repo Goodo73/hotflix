@@ -3,9 +3,9 @@
 }
 
 .grid-items {
-  @include outer-container(95%);
+  /*@include outer-container(95%);*/
   $action-color: #477DCA !default;
-  $base-background-color: white !default;
+  $base-background-color: black !default;
   $medium-screen: em(640) !default;
   $large-screen: em(860) !default;
   $grid-items-background: $base-background-color;
@@ -33,7 +33,7 @@
     border-left: ($grid-item-border-size / 2) solid $grid-items-background;
     border-right: ($grid-item-border-size / 2) solid $grid-items-background;
     border-top: 0;
-    cursor: pointer;
+    /*cursor: pointer;*/
     float: left;
     height: $grid-item-height;
     overflow: hidden;
@@ -74,7 +74,7 @@
   .grid-item h1 {
       color: $grid-item-color;
       font-size: 1.3em;
-      margin-bottom: 0.4em;
+      margin-bottom: 1em;
     }
 
   .grid-item p {
