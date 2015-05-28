@@ -1,26 +1,38 @@
+#admin-container {
+	margin-left: 2%;
+	font-family: $verdana;
+}
+
 .button {
 	border: 1px solid black;
 	border-radius: 5px;
-	background-color: white;
-	width: 50px;
+	background-color: rgba(0,0,0,0.2);
+	width: 70px;
 	display: inline-block;
 	text-align: center;
-	padding: 3px;
+	padding: 5px;
 }
 
 .new-review-btn {
-	width: 90px;
+	width: 120px;
 }
 
 a {
 	text-decoration: none;
-	color: black;
 }
 
-#admin-index a {
+#admin-container a {
 	color: white;
 }
 
 .review-index {
-	margin-bottom: 30px;
+	margin-bottom: 25px;
+	border: solid 1px #A6C36F;
+	padding: 20px 30px;
+	width: 40%;
+	border-radius: 8px;
+
+	p {
+		margin-top: 0;
+	}
 }

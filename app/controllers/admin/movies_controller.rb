@@ -40,7 +40,7 @@ class Admin::MoviesController < AdminController
 	end
 
 	def movie_params
-		params.require(:movie).permit(:title, :release_date, :rating, :director, :cast, :duration, :score, :demographic_score, :imdbid, :review, :trailer_link)
+		params.require(:movie).permit(:title, :release_date, :rating, :director, :cast, :duration, :score, :demographic_score, :imdbid, :review, :trailer_link, :poster_link)
 	end
 
 end

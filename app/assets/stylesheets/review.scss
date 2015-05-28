@@ -1,6 +1,6 @@
 body {
-	background-color: black;
-	color: white;
+	background-color: #632B30;
+	color: #A6C36F;
 }
 
 #review-page, .mylightbox {
@@ -13,16 +13,28 @@ body {
 
 .main-heading {
 	font-size: 3em;
-	min-width: 225px;
+	border-bottom: 3px solid #A6C36F;
+	border-left: 3px solid #A6C36F;
+	border-radius: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	margin: 20px 0 0;
 }
 
-.movie-card-dtl, .trailer {
+.tagline {
+	text-align: right;
+	padding-right: 10px;
+	margin-bottom: 30px;
+}
+
+.movie-card-title, .trailer {
 	cursor: pointer;
 	border: solid white 2px;
 	border-radius: 8px;
+	background-color: rgba(0,0,0,0.6);
 }
 
-.movie-card-dtl {
+.movie-card-title {
 	margin-bottom: 45px;
 }
 
@@ -34,7 +46,11 @@ body {
 .mylightbox {
 	@include outer-container(95%);
 	display: none;
-	color: black;
+	color: #C7DBE6;
+
+	a {
+		color: #C7DBE6;
+	}
 }
 
 .movie-upper {
@@ -52,4 +68,10 @@ body {
 
 .poster {
 	max-height: 350px;
+}
+
+footer p {
+	border-top: 1px solid #A6C36F;
+	margin: 30px 0;
+	padding-top: 20px;
 }

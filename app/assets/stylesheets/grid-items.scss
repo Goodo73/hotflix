@@ -5,7 +5,8 @@
 .grid-items {
   /*@include outer-container(95%);*/
   $action-color: #477DCA !default;
-  $base-background-color: black !default;
+  /*$base-background-color: white !default;*/
+  $base-background-color: #632B30 !default;
   $medium-screen: em(640) !default;
   $large-screen: em(860) !default;
   $grid-items-background: $base-background-color;
@@ -21,7 +22,8 @@
   $grid-item-border-size: 9px;
   $grid-item-columns: 4;
   $grid-item-big-columns: 8;
-  $grid-item-color: white;
+  /*$grid-item-color: white;*/
+  $grid-item-color: #BEEF9E;
   $grid-item-height: 14em;
 
   @include clearfix;
@@ -75,14 +77,14 @@
   .grid-item h1 {
       color: $grid-item-color;
       font-size: 1.3em;
-      margin-bottom: 1em;
+      /*margin-bottom: 1em;*/
+      margin-bottom: 0.67em;
     }
 
   .grid-item p {
       line-height: 1.5em;
       margin: auto;
-      /*color: transparentize($grid-item-color, 0.3);*/
-      color: transparentize($grid-item-color, 0.2);
+      color: transparentize($grid-item-color, 0.3);
       
       @include media($medium-screen) {
         max-width: 70%;
@@ -102,11 +104,24 @@
 
   .grid-item-image {
     /*background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png");*/
-    background: url("http://ia.media-imdb.com/images/M/MV5BNDQ3OTAzMDI3MV5BMl5BanBnXkFtZTgwNTUzMTQ3NDE@._V1_SX300.jpg");
     background-color: $grid-item-background;
     /*background-position: top;*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    z-index: 1;
+  }
+  .grid-item-image:after {
+    content: "";
+    display: block;
+    background-color: #000;
+    opacity: 0.1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
   }
 }

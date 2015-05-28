@@ -1,13 +1,19 @@
-<h1><%= @movie.title %></h1>
-<p>Release date: <%= @movie.release_date %></p>
-<p>Rating: <%= @movie.rating %></p>
-<p>Director: <%= @movie.director %></p>
-<p>Stars: <%= @movie.cast %></p>
-<p>Run time: <%= @movie.duration %> minutes</p>
-<p>My score: <%= @movie.score %>/10</p>
-<p>Target demo score: <%= @movie.demographic_score %>/10</p>
-<p>Trailer: <a href="<%= "#{@movie.trailer_link}" %>"><%= @movie.trailer_link %></a></p>
-<p>IMDb ID: <%= @movie.imdbid %></p>
-<p><%= @movie.review %></p>
+<div id="admin-container">
 
-<p><%= link_to "Edit", edit_admin_movie_path(@movie), :class => 'button', :method => :get  %></p>
+	<h1><%= @movie.title %></h1>
+	<p>Release date: <%= @movie.release_date %></p>
+	<p>Rating: <%= @movie.rating %></p>
+	<p>Director: <%= @movie.director %></p>
+	<p>Stars: <%= @movie.cast %></p>
+	<p>Run time: <%= @movie.duration %> minutes</p>
+	<p>My score: <%= @movie.score %>/10</p>
+	<p>Target demo score: <%= @movie.demographic_score %>/10</p>
+	<p>YouTube Trailer: <%= @movie.trailer_link %></p>
+	<p>Poster: <%= @movie.poster_link %></p>
+	<p>IMDb ID: <%= @movie.imdbid %></p>
+	<!-- Include instructions (popup?) for obtaining the trailer and poster links, and the IMDb ID -->
+	<p><%= @movie.review %></p>
+
+	<p><%= link_to "Edit", edit_admin_movie_path(@movie), :class => 'button', :method => :get  %></p>
+
+</div>
