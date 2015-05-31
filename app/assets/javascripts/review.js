@@ -44,7 +44,7 @@ var loadReviews = {
 			$movieCard.append($movieCardTitle);
 
 			// Supplementary text for the card; a trigger for a lightbox to show the movie's trailer
-			var $movieCardTrailer = $('<p>').addClass('trailer')
+			var $movieCardTrailer = $('<p>').addClass('movie-card-trailer')
 				.attr('data-movie-id',reviews[i].id)
 				.html('Play trailer');
 			$movieCard.append($movieCardTrailer);
@@ -106,7 +106,7 @@ $(document).ready(function() {
 	});
 
 	// When card's supplementary text is clicked, display a lightbox containing the movie's trailer
-	$('.grid-items').on('click','p.trailer',function() {
+	$('.grid-items').on('click','p.movie-card-trailer',function() {
 		var $idx = $(this).data('movieId');
 		var review = loadReviews.reviews[loadReviews.idLookup[$idx]];
 

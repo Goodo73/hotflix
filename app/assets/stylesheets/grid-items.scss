@@ -22,8 +22,7 @@
   $grid-item-border-size: 9px;
   $grid-item-columns: 4;
   $grid-item-big-columns: 8;
-  /*$grid-item-color: white;*/
-  $grid-item-color: #BEEF9E;
+  $grid-item-color: white;
   $grid-item-height: 14em;
 
   @include clearfix;
@@ -53,7 +52,7 @@
       &:nth-child(#{$i}) {
         $background-from-list: nth($grid-item-colors, $i);
         background-color: $background-from-list;
-        box-shadow: inset 0px 0px 1px 2px darken($background-from-list, 10%);
+        /*box-shadow: inset 0px 0px 1px 2px darken($background-from-list, 10%);*/
 
         &:focus,
         &:hover {
@@ -77,8 +76,7 @@
   .grid-item h1 {
       color: $grid-item-color;
       font-size: 1.3em;
-      /*margin-bottom: 1em;*/
-      margin-bottom: 0.67em;
+      margin-bottom: 1em;
     }
 
   .grid-item p {
@@ -105,23 +103,10 @@
   .grid-item-image {
     /*background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png");*/
     background-color: $grid-item-background;
-    /*background-position: top;*/
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     z-index: 1;
-  }
-  .grid-item-image:after {
-    content: "";
-    display: block;
-    background-color: #000;
-    opacity: 0.1;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
   }
 }

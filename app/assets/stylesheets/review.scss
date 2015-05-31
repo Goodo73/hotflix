@@ -4,7 +4,7 @@ body {
 }
 
 #review-page, .mylightbox {
-	font-family: $verdana;
+	font-family: $helvetica;
 }
 
 #review-page {
@@ -27,18 +27,20 @@ body {
 	margin-bottom: 30px;
 }
 
-.movie-card-title, .trailer {
+.movie-card-title, .movie-card-trailer {
 	cursor: pointer;
-	border: solid white 1px;
-	border-radius: 8px;
+	/*border: solid white 1px;*/
+	/*border-radius: 8px;*/
 	background-color: rgba(0,0,0,0.6);
 }
 
 .movie-card-title {
 	margin-bottom: 45px;
+/*	padding-top: 1px;
+	padding-bottom: 1px;*/
 }
 
-.trailer {
+.movie-card-trailer {
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
@@ -68,6 +70,32 @@ body {
 
 .poster {
 	max-height: 350px;
+}
+
+.grid-items {
+  /*$grid-item-color: #BEEF9E;*/
+
+  .grid-item h1 {
+     margin-bottom: 0.67em;
+     font-size: 1.7em;
+  }
+  
+  .grid-item-image {
+		background-position: center;
+	}
+
+  .grid-item-image:after {
+    content: "";
+    display: block;
+    background-color: #000;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }	
 }
 
 footer p {

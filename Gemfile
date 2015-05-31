@@ -57,3 +57,7 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
+group :production do
+  #  Enables serving assets in production and sets logger to standard out; also assists in Heroku deployment
+  gem 'rails_12factor'
+end
