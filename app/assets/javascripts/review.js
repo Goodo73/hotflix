@@ -99,7 +99,9 @@ $(document).ready(function() {
 		$upper.append($posterContainer);
 		$popup.append($upper);
 		
-		var $review = $('<p>').html(review.review);
+		// Format review text, replacing each carriage-return with a break tag
+		var formattedString = review.review.replace(/\r/g,'<br>');
+		var $review = $('<p>').html(formattedString);
 		$popup.append($review);
 
 		$.magnificPopup.open({
