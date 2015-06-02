@@ -3,7 +3,7 @@ body {
 	color: #A6C36F;
 }
 
-#review-page, .mylightbox {
+#review-page, .review-popup {
 	font-family: $helvetica;
 }
 
@@ -45,9 +45,8 @@ body {
 	padding-bottom: 5px;
 }
 
-.mylightbox {
+.review-popup {
 	@include outer-container(95%);
-	display: none;
 	color: #C7DBE6;
 
 	a {

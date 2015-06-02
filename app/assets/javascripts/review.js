@@ -37,7 +37,6 @@ var loadReviews = {
 
 			// Main text for the card; a trigger for a lightbox to show the movie's review
 			var $movieCardTitle = $('<div>').addClass('movie-card-title')
-				.attr('data-featherlight','.mylightbox')
 				.attr('data-movie-id',reviews[i].id);
 			$movieCardTitle
 				.append($('<h1>').html(reviews[i].title));
@@ -61,18 +60,17 @@ $(document).ready(function() {
 
 	// When card's main text is clicked, display a lightbox containing the movie's review
 	$('.grid-items').on('click','.movie-card-title',function() {
-		var $modal = $('.mylightbox');
-		$modal.empty();
+		var $popup = $('<div>').addClass('review-popup');
 		
 		var $upper = $('<div>').addClass('movie-upper');
 
 		// View the lookup table to determine the review's position within the
-		// review array, and then retrieve the review from it
+		// review array, and then retrieve the review from the array
 		var $idx = $(this).data('movieId');
 		var review = loadReviews.reviews[loadReviews.idLookup[$idx]];
 
 		// Format the details of the reviewed movie.
-		// Function reviewPara is called to join the category name and data (bolding
+		// The reviewPara function is called to join the category name and data (bolding
 		// the former)
 		var $details = $('<div>').addClass('movie-details');
 		$details.append(reviewPara('Title: ',review.title));
@@ -99,10 +97,18 @@ $(document).ready(function() {
 
 		$upper.append($details);
 		$upper.append($posterContainer);
-		$modal.append($upper);
+		$popup.append($upper);
 		
 		var $review = $('<p>').html(review.review);
-		$modal.append($review);
+		$popup.append($review);
+
+		$.magnificPopup.open({
+  		items: {
+    		src: $popup,
+    		type: 'inline'
+  		},
+  		closeBtnInside: true
+		});
 	});
 
 	// When card's supplementary text is clicked, display a lightbox containing the movie's trailer
