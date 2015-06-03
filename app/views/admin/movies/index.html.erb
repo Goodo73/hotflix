@@ -1,9 +1,5 @@
 <div id="admin-container">
-	<h1>Index page</h1>
-
 	<%= link_to "New review", new_admin_movie_path, :class => 'button new-review-btn', :method => :get  %>
-
-	<h2>Reviews</h2>
 
 	<div id="review-list">
 		<% @movies.each do |movie| %>

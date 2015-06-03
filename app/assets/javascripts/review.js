@@ -43,9 +43,10 @@ var loadReviews = {
 			$movieCard.append($movieCardTitle);
 
 			// Supplementary text for the card; a trigger for a lightbox to show the movie's trailer
-			var $movieCardTrailer = $('<p>').addClass('movie-card-trailer')
-				.attr('data-movie-id',reviews[i].id)
-				.html('Play trailer');
+			var $movieCardTrailer = $('<i>').addClass('movie-card-trailer')
+				.addClass('fa')
+				.addClass('fa-film')
+				.attr('data-movie-id',reviews[i].id);
 			$movieCard.append($movieCardTrailer);
 
 			$gridItems.append($movieCard);
@@ -73,19 +74,18 @@ $(document).ready(function() {
 		// The reviewPara function is called to join the category name and data (bolding
 		// the former)
 		var $details = $('<div>').addClass('movie-details');
-		$details.append(reviewPara('Title: ',review.title));
-		$details.append(reviewPara('Release date: ',prettyDate(review.release_date)));
-		$details.append(reviewPara('Rating: ',review.rating));
-		$details.append(reviewPara('Director: ',review.director));
-		$details.append(reviewPara('Stars: ',review.cast));
-		$details.append(reviewPara('Run time (minutes): ',review.duration));
-		$details.append(reviewPara('My score (out of 10): ',review.score));
-		$details.append(reviewPara('Target demo score (out of 10): ',review.demographic_score));
+		// $details.append($('<p>').html('<strong>Title: </strong>' + review.title));
+		$details.append($('<p>').html('<strong>Release date: </strong>' + prettyDate(review.release_date)));
+		$details.append($('<p>').html('<strong>Rating: </strong>' + review.rating));
+		$details.append($('<p>').html('<strong>Director: </strong>' + review.director));
+		$details.append($('<p>').html('<strong>Stars: </strong>' + review.cast));
+		$details.append($('<p>').html('<strong>Run time: </strong>' + review.duration + ' minutes'));
+		$details.append($('<p>').html('<strong>My score: </strong>' + review.score + '/10'));
+		$details.append($('<p>').html('<strong>Target demo score: </strong>' + review.demographic_score + '/10'));
 
 		// Format the movie's IMDb link as an anchor element
-		var $imdb = reviewPara('IMDb: ','');
 		var imdbUrl = ('http://www.imdb.com/title/' + review.imdbid + '/');
-		$imdb.append(createLink(imdbUrl));
+		var $imdb = $('<p>').append(createLink(imdbUrl));
 		$details.append($imdb);
 
 		var $posterContainer = $('<div>').addClass('poster-container');
@@ -114,7 +114,7 @@ $(document).ready(function() {
 	});
 
 	// When card's supplementary text is clicked, display a lightbox containing the movie's trailer
-	$('.grid-items').on('click','p.movie-card-trailer',function() {
+	$('.grid-items').on('click','.movie-card-trailer',function() {
 		var $idx = $(this).data('movieId');
 		var review = loadReviews.reviews[loadReviews.idLookup[$idx]];
 
@@ -136,14 +136,12 @@ function prettyDate(date) {
 	return d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear();
 }
 
-function reviewPara(heading,text) {
-	return $('<p>').html('<strong>' + heading + '</strong>' + text);
-}
-
+// Builds an anchor element
 function createLink(url) {
-	var $link = $('<a>');
-	$link.attr('href',url);
-	$link.attr('target','_blank');
-	$link.html(url);
+	var $link = $('<a>')
+		.attr('href',url)
+		.attr('target','_blank')
+		.html(url);
+	
 	return $link
 }

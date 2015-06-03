@@ -1,56 +1,70 @@
 body {
-	background-color: #632B30;
-	color: #A6C36F;
+	margin: 0;
+	background-color: black;
 }
 
-#review-page, .review-popup {
-	font-family: $helvetica;
+header {
+	color: white;
+	margin-bottom: 30px;
+}
+
+header, footer, #review-page, .review-popup {
+	font-family: 'Signika', sans-serif;
 }
 
 #review-page {
 	@include outer-container(95%);
+	margin-bottom: 30px;
 }
 
 .main-heading {
-	font-size: 3em;
-	border-bottom: 3px solid #A6C36F;
-	border-left: 3px solid #A6C36F;
-	border-radius: 10px;
+	font-size: 4em;
+	padding-top: 40px;
 	padding-bottom: 10px;
-	padding-left: 20px;
-	margin: 20px 0 0;
+	margin: 0 0 30px;
+	text-align: center;
+	/*border-bottom: solid 1px white;*/
 }
 
 .tagline {
-	text-align: right;
-	padding-right: 10px;
-	margin-bottom: 30px;
+	text-align: center;
+	padding-bottom: 10px;
+	font-size: 1.5em;
+}
+
+.social {
+	text-align: center;
+	padding-bottom: 20px;
+
+	i {
+		font-size: 1.25em;
+		display: inline-block;
+		padding: 0 10px;
+		color: white;
+	}
 }
 
 .movie-card-title, .movie-card-trailer {
 	cursor: pointer;
-	/*border: solid white 1px;*/
-	/*border-radius: 8px;*/
-	background-color: rgba(0,0,0,0.6);
+	margin: 0;
 }
 
 .movie-card-title {
-	margin-bottom: 45px;
-/*	padding-top: 1px;
-	padding-bottom: 1px;*/
+	background-color: rgba(0,0,0,0.6);
 }
 
 .movie-card-trailer {
-	padding-top: 5px;
-	padding-bottom: 5px;
+	color: white;
+	font-size: 3.5em;
 }
 
 .review-popup {
 	@include outer-container(95%);
-	color: #C7DBE6;
+	color: white;
+	font-size: 1.25em;
 
 	a {
-		color: #C7DBE6;
+		color: white;
 	}
 }
 
@@ -69,16 +83,20 @@ body {
 
 .poster {
 	max-height: 350px;
+	margin-top: 20px;	
 }
 
 .grid-items {
-  /*$grid-item-color: #BEEF9E;*/
+  .grid-item {
+     padding-left: 0;
+     padding-right: 0;  	
+  }
 
   .grid-item h1 {
-     margin-bottom: 0.67em;
-     font-size: 1.7em;
+  	margin-bottom: 0.67em;
+    font-size: 2em;
   }
-  
+    
   .grid-item-image {
 		background-position: center;
 	}
@@ -97,8 +115,14 @@ body {
   }	
 }
 
-footer p {
-	border-top: 1px solid #A6C36F;
-	margin: 30px 0;
-	padding-top: 20px;
+footer {
+	margin: 0;
+	padding: 10px;
+	background-color: black;
+	color: white;
+
+	.twitter-follow-button {
+			display: block;
+			margin: 20px 0;
+		}
 }

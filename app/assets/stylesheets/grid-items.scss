@@ -5,8 +5,7 @@
 .grid-items {
   /*@include outer-container(95%);*/
   $action-color: #477DCA !default;
-  /*$base-background-color: white !default;*/
-  $base-background-color: #632B30 !default;
+  $base-background-color: black !default;
   $medium-screen: em(640) !default;
   $large-screen: em(860) !default;
   $grid-items-background: $base-background-color;

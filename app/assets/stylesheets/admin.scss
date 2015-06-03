@@ -1,10 +1,23 @@
 #admin-container {
 	margin-left: 2%;
-	font-family: $verdana;
+	font-family: 'Signika', sans-serif;
+	color: white;
+
+	a {
+		color: white;
+	}
+
+	p {
+		font-size: 1.25em;
+	}
+
+	input, textarea {
+		font-size: 1em;
+	}
 }
 
 .button {
-	border: 1px solid black;
+	border: 2px solid white;
 	border-radius: 5px;
 	background-color: rgba(0,0,0,0.2);
 	width: 70px;
@@ -15,24 +28,19 @@
 
 .new-review-btn {
 	width: 120px;
+	margin: 30px 20px;
 }
 
 a {
 	text-decoration: none;
 }
 
-#admin-container a {
-	color: white;
-}
-
 .review-index {
-	margin-bottom: 25px;
-	border: solid 1px #A6C36F;
-	padding: 20px 30px;
-	width: 40%;
-	border-radius: 8px;
+	margin-bottom: 30px;
+	padding: 0 20px;
 
 	p {
 		margin-top: 0;
+		font-size: 1.25em;
 	}
 }
