@@ -1,6 +1,7 @@
 body {
 	margin: 0;
 	background-color: black;
+  background: linear-gradient(45deg, #7d7e7d 0%,#0e0e0e 100%);
 }
 
 header {
@@ -117,7 +118,6 @@ header, footer, #review-page, .review-popup {
 footer {
 	margin: 0;
 	padding: 10px;
-	background-color: black;
 	color: white;
 
 	.twitter-follow-button {
