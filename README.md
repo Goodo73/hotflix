@@ -2,6 +2,8 @@
 
 ## Website for Hot Flix Movie Reviews
 
+Currently deployed to [Heroku](http://hotflix.herokuapp.com/). To be deployed to the official Hotflix site once the desired functionality is added.
+
 ### Background
 My brother, Pete Goodwin, reviews films. He currently presents his reviews on radio, usually as **Pete, The Movie Guy**, and on [Facebook](https://www.facebook.com/HotFlix.com.au) under the heading **Hot Flix Movie Reviews**. He does not yet have a website for showcasing his reviews.
 
