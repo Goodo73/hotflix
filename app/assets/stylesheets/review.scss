@@ -119,9 +119,39 @@ footer {
 	margin: 0;
 	padding: 10px;
 	color: white;
+}
 
-	.twitter-follow-button {
-			display: block;
-			margin: 20px 0;
+@media screen and (max-width: 480px) {
+	.main-heading {
+		font-size: 2.3em;
+		padding-top: 10px;
+		padding-bottom: 0;
+		margin: 0;
+	}
+
+  .tagline {
+    font-size: 1.1em;
+		padding-bottom: 0;
+  }
+
+	.social {
+		padding: 0;
+
+		i {
+			font-size: 1.4em;
 		}
+	}
+
+	.movie-details, .poster-container, .review-text {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.movie-details, .poster-container {
+		float: none;
+	}
+
+	.movie-details, .review-text {
+		font-size: 0.8em;
+	}
 }

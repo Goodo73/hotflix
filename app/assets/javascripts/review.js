@@ -75,13 +75,13 @@ $(document).ready(function() {
 		// the former)
 		var $details = $('<div>').addClass('movie-details');
 		// $details.append($('<p>').html('<strong>Title: </strong>' + review.title));
-		$details.append($('<p>').html('<strong>Release date: </strong>' + prettyDate(review.release_date)));
-		$details.append($('<p>').html('<strong>Rating: </strong>' + review.rating));
-		$details.append($('<p>').html('<strong>Director: </strong>' + review.director));
-		$details.append($('<p>').html('<strong>Stars: </strong>' + review.cast));
-		$details.append($('<p>').html('<strong>Run time: </strong>' + review.duration + ' minutes'));
-		$details.append($('<p>').html('<strong>My score: </strong>' + review.score + '/10'));
-		$details.append($('<p>').html('<strong>Target demo score: </strong>' + review.demographic_score + '/10'));
+		$details.append($('<p>').html('<strong>Release date ... </strong>' + prettyDate(review.release_date)));
+		$details.append($('<p>').html('<strong>Rating ... </strong>' + review.rating));
+		$details.append($('<p>').html('<strong>Director ... </strong>' + review.director));
+		$details.append($('<p>').html('<strong>Stars ... </strong>' + review.cast));
+		$details.append($('<p>').html('<strong>Run time ... </strong>' + review.duration + ' minutes'));
+		$details.append($('<p>').html('<strong>My score ... </strong>' + review.score + '/10'));
+		$details.append($('<p>').html('<strong>Target demo score ... </strong>' + review.demographic_score + '/10'));
 
 		// Format the movie's IMDb link as an anchor element
 		var imdbUrl = ('http://www.imdb.com/title/' + review.imdbid + '/');
@@ -101,7 +101,7 @@ $(document).ready(function() {
 		
 		// Format review text, replacing each carriage-return with a break tag
 		var formattedString = review.review.replace(/\r/g,'<br>');
-		var $review = $('<p>').html(formattedString);
+		var $review = $('<p>').addClass('review-text').html(formattedString);
 		$popup.append($review);
 
 		$.magnificPopup.open({
