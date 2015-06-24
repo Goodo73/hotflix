@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get '/' => 'movies#index', :as => :root
   get '/admin' => 'admin#index', :as => :admin_root
-  get '/api/reviews' => 'movies#list'
+  get '/api/movies' => 'movies#list'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
