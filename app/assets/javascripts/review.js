@@ -35,14 +35,14 @@ var loadMovies = {
       var $movieCard = $('<div>').addClass('grid-item grid-item-image')
         .css('background-image','url(' + movies[i].poster_link + ')');
 
-      // Main text for the card; a trigger for a lightbox to show the movie's review
+      // Movie title for the card; a trigger for a lightbox to show the movie's review
       var $movieCardTitle = $('<div>').addClass('movie-card-title')
         .attr('data-movie-id',movies[i].id);
       $movieCardTitle
         .append($('<h1>').html(movies[i].title));
       $movieCard.append($movieCardTitle);
 
-      // Supplementary text for the card; a trigger for a lightbox to show the movie's trailer
+      // Film icon for the card; a trigger for a lightbox to show the movie's trailer
       var $movieCardTrailer = $('<i>').addClass('movie-card-trailer')
         .addClass('fa')
         .addClass('fa-film')
